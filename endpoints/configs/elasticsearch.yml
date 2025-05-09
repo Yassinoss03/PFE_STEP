@@ -1,0 +1,56 @@
+# ============================================================
+#  _____   ___   _____  __  __        _   _  ___  ____   _____        _   _  ___  ____   _____  
+# / ____| |_ _| | ____||  \/  |      | | | ||_ _||  _ \ / ___|      | \ | ||_ _||  _ \ / ___| 
+# \___ \  | |  |  _|  | |\/| |______| |_| | | | | | | |\___ \ ______| |\| | | | | | | |\___ \ 
+#  ___) | | |  | |___ | |  | |______|  _  | | | | |_| | ___) |______| |\  | | | | |_| | ___) |
+# |____/ |___| |_____||_|  |_|      |_| |_||___||____/ |____/       |_| \_||___||____/ |____/ 
+#
+#                                 Créé par : Yassine Kabbaj
+# ============================================================
+
+# Configuration Elasticsearch pour SOC
+
+# ---------------------------------- Cluster -----------------------------------
+#
+# Nom du cluster
+cluster.name: soc-cluster
+
+# ------------------------------------ Node ------------------------------------
+#
+# Nom du nœud
+node.name: soc-node-1
+
+# ----------------------------------- Paths ------------------------------------
+#
+# Chemin pour les données
+path.data: /var/lib/elasticsearch
+# Chemin pour les logs
+path.logs: /var/log/elasticsearch
+
+# ---------------------------------- Network -----------------------------------
+#
+# Adresse IP sur laquelle le nœud va écouter
+network.host: 0.0.0.0
+# Port HTTP
+http.port: 9200
+
+# --------------------------------- Discovery ----------------------------------
+#
+# Pour un environnement à nœud unique
+discovery.type: single-node
+
+# ---------------------------------- Security ---------------------------------
+#
+# Activer la sécurité xpack (optionnel)
+xpack.security.enabled: true
+
+# ---------------------------------- Performance ------------------------------
+#
+# Configuration pour optimiser les performances
+bootstrap.memory_lock: true
+thread_pool.write.queue_size: 1000
+
+# ---------------------------------- Monitoring ------------------------------
+#
+# Activer la surveillance
+xpack.monitoring.collection.enabled: true
