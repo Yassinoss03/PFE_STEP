@@ -1,0 +1,51 @@
+# ============================================================
+#  _____   ___   _____  __  __        _   _  ___  ____   _____        _   _  ___  ____   _____  
+# / ____| |_ _| | ____||  \/  |      | | | ||_ _||  _ \ / ___|      | \ | ||_ _||  _ \ / ___| 
+# \___ \  | |  |  _|  | |\/| |______| |_| | | | | | | |\___ \ ______| |\| | | | | | | |\___ \ 
+#  ___) | | |  | |___ | |  | |______|  _  | | | | |_| | ___) |______| |\  | | | | |_| | ___) |
+# |____/ |___| |_____||_|  |_|      |_| |_||___||____/ |____/       |_| \_||___||____/ |____/ 
+#
+#                                 Créé par : Yassine Kabbaj
+# ============================================================
+
+# Configuration Kibana pour SOC
+
+# ---------------------------------- Server -----------------------------------
+#
+# Nom du serveur Kibana
+server.name: "SOC-Dashboard"
+# Port du serveur
+server.port: 5601
+# Adresse d'écoute (0.0.0.0 pour toutes les interfaces)
+server.host: "0.0.0.0"
+
+# ---------------------------------- Elasticsearch -----------------------------------
+#
+# URL vers Elasticsearch
+elasticsearch.hosts: ["http://localhost:9200"]
+# Timeout pour les requêtes Elasticsearch
+elasticsearch.requestTimeout: 90000
+
+# ---------------------------------- Kibana -----------------------------------
+#
+# Titre de l'application Kibana
+server.defaultRoute: "/app/security"
+kibana.index: ".kibana"
+
+# ---------------------------------- Logging -----------------------------------
+#
+# Chemin pour les logs
+logging.dest: stdout
+logging.verbose: false
+
+# ---------------------------------- Security -----------------------------------
+#
+# Sécurité
+xpack.security.enabled: true
+xpack.reporting.kibanaServer.hostname: "localhost"
+
+# ---------------------------------- SIEM Feature -----------------------------------
+#
+# Activer les fonctionnalités de sécurité
+xpack.securitySolution.enabled: true
+xpack.encryptedSavedObjects.encryptionKey: "something_at_least_32_characters"
